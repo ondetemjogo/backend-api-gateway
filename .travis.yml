@@ -1,0 +1,17 @@
+addons:
+  sonarqube: true
+language: java
+jdk:
+- oraclejdk8
+script:
+- mvn clean install
+deploy:
+  provider: heroku
+  api_key:
+    secure: NfmhRVb25+voU5JIFermLzZdsQx18IuooV+cjlyN/EzN40Ubk8aHVdZADLl463604rQpuYvtDEe70Pt/iMqBj/rHM7yz71ISfwhgIG/q6/RwuQPHO5E6J5u02ZxIQYFV0mVwbp819Qa7BUl4og3vPSDGtvEPJl9TrO/VVczKSoGZ4tiLApGLTJnLeWaBb7N0T3PkePtSD9iXT6vW6PZZsnnd8akMU3gb/rr9QML6wNQhhDhj5X8+21IWKUNqqRx63Hn27eO6e09y9Y1iW0nKKVG8qtcwToV2OtuwWtso5miMg/MxJiOHE/hALHchxDfiZn8vR91EANiB2zStucEe8ypRUtPZiHlr+4dy3T0qxG2tAWrqCJzkojVQT9ntv1GlWTAjro/kADgXy44NAkPOv4D8L8B1ffp9GJhMtQaVTSw5qv7M8j6DW/H4WQuLixcGr42xKuuZsuzJVi81402TsciNdXuY+aONta0p7r8fWKvpn2hUXyMtj02TDPOCMDWAaPJ3bhDaYcSJsUwU19xgUvVAoDRK7R9hM3sPbsdZfNKTkfcw/CFkZU+JpUHcdcp+JVBSoON/jIVOdw7MowHrKpPIeVnhKdG319Kp84SB1HXOq/w4h9ih/g5X9JKUICLSzja0aLli8dMiEljY/MG27WQQLsZUEE8C8wKwHQaZEJ4=
+  app: zuul-server-ondetemjogo
+  on:
+    repo: ondetemjogo/backend-zuul-server
+cache:
+  directories:
+  - "$HOME/.m2/repository"
